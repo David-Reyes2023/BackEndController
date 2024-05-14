@@ -11,7 +11,7 @@ const DUMMY_PLACES = [
     {
         id: 'p2',
         title: 'Centro Cívico',
-        creator: 'u1'
+        creator: 'u2'
     }
 ];
 
@@ -55,8 +55,9 @@ const postPlaces = (req, res, next)=>{
     };
     DUMMY_PLACES.push(createdPlace);
     res.status(201).json({place:createdPlace});
+    res.json({places});
 };
-
+//updatePlaces = Patch
 const updatePlaces = (req,res,next)=>{
     const {title} = req.body;
     const placeId= req.params.pid;
